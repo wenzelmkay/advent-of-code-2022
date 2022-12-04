@@ -3,7 +3,6 @@ import {inputPersonal} from "./inputPersonal.js";
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-
 const getItemPriority = (item) => {
     let itemPriority = 0
     itemPriority = alphabet.indexOf(item) + 1
@@ -33,12 +32,11 @@ const findTheMisplacedItemSum = (rucksackItemsSplitByElf) => {
                 compartmentTwo: (rucksack.slice(rucksack.length/2)).split('')
             }
             // console.log(rucksackCompartments)
-            let misplacedItems = undefined
+            let misplacedItems = []
             misplacedItems = [...findDuplicateItems(rucksackCompartments.compartmentOne, rucksackCompartments.compartmentTwo)]
             if(misplacedItems.length !== 1){
                 misplacedItems = [...findDuplicateItems(rucksackCompartments.compartmentTwo, rucksackCompartments.compartmentOne)]
             }
-            // console.log(misplacedItems)
             if(misplacedItems.length !== 1){
                 console.log("Uh-oh")
                 console.log(rucksack)
